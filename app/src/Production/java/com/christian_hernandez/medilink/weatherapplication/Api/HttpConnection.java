@@ -31,7 +31,6 @@ class HttpConnection {
 
     private void httpsGetMethod(String SERVICE_URL) {
         int responseCode = 0;
-        String fouth_var = "";
 
         try {
             URL e = new URL(SERVICE_URL);

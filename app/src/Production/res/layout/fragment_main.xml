@@ -5,6 +5,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="Fragment.MainFragment">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/ic_refresh"
+            android:layout_width="40sp"
+            android:layout_height="40sp"
+            android:src="@drawable/refresh"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="10sp"
+            android:layout_marginRight="20sp"
+            android:padding="5sp"/>
+    </RelativeLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -52,8 +66,7 @@
                     <ImageView
                         android:id="@+id/iv_london_weather"
                         android:layout_width="50sp"
-                        android:layout_height="50sp"
-                        android:src="@drawable/TempIcon" />
+                        android:layout_height="50sp"/>
 
                     <TextView
                         android:id="@+id/tv_london_weather"
@@ -73,13 +86,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="140sp"
+                    android:layout_marginLeft="240sp"
                     android:padding="3dp">
 
                     <ImageView
                         android:layout_width="50sp"
                         android:layout_height="50sp"
-                        android:src="@drawable/TempIcon" />
+                        android:src="@drawable/tempicon" />
 
                     <TextView
                         android:id="@+id/tv_london_temp"
@@ -140,8 +153,7 @@
                     <ImageView
                         android:id="@+id/iv_prague_weather"
                         android:layout_width="50sp"
-                        android:layout_height="50sp"
-                        android:src="@drawable/TempIcon"/>
+                        android:layout_height="50sp"/>
 
                     <TextView
                         android:id="@+id/tv_prague_weather"
@@ -161,13 +173,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="140sp"
+                    android:layout_marginLeft="240sp"
                     android:padding="3dp">
 
                     <ImageView
                         android:layout_width="50sp"
                         android:layout_height="50sp"
-                        android:src="@drawable/TempIcon"/>
+                        android:src="@drawable/tempicon"/>
 
                     <TextView
                         android:id="@+id/tv_prague_temp"
@@ -228,8 +240,7 @@
                     <ImageView
                         android:id="@+id/iv_sf_weather"
                         android:layout_width="50sp"
-                        android:layout_height="50sp"
-                        android:src="@drawable/TempIcon"/>
+                        android:layout_height="50sp"/>
                     <TextView
                         android:id="@+id/tv_sf_weather"
                         android:layout_width="wrap_content"
@@ -248,13 +259,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="140sp"
+                    android:layout_marginLeft="240sp"
                     android:padding="3dp">
 
                     <ImageView
                         android:layout_width="50sp"
                         android:layout_height="50sp"
-                        android:src="@drawable/TempIcon"/>
+                        android:src="@drawable/tempicon"/>
 
                     <TextView
                         android:id="@+id/tv_sf_temp"

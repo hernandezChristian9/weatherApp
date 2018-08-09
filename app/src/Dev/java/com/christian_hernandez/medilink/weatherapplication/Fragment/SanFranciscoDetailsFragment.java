@@ -22,7 +22,7 @@ import android.widget.TextView;
 
 import com.christian_hernandez.medilink.weatherapplication.Api.ApiMethods;
 import com.christian_hernandez.medilink.weatherapplication.Api.GlobalVariables;
-import com.christian_hernandez.medilink.weatherapplication.Model.London;
+import com.christian_hernandez.medilink.weatherapplication.Model.San_Francisco;
 import com.christian_hernandez.medilink.weatherapplication.R;
 
 import org.json.JSONArray;
@@ -38,7 +38,7 @@ import java.net.URL;
  * Created by christian_hernandez on 8/9/2018.
  */
 
-public class WeatherDetailsFragment extends Fragment{
+public class SanFranciscoDetailsFragment extends Fragment{
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
@@ -46,20 +46,20 @@ public class WeatherDetailsFragment extends Fragment{
     private String mParam1;
     private String mParam2;
 
-    private London london_details;
+    private San_Francisco san_francisco_details;
 
     TextView tv_current_temperature_field, tv_weather_field, tv_details_field;
     FragmentManager manager;
     ImageView iv_weather_icon;
 
-    private Bitmap london_icon = null;
+    private Bitmap san_francisco_icon = null;
 
-    public WeatherDetailsFragment() {
+    public SanFranciscoDetailsFragment() {
         // Required empty public constructor
     }
 
-    public static WeatherDetailsFragment newInstance(String param1, String param2) {
-        WeatherDetailsFragment fragment = new WeatherDetailsFragment();
+    public static SanFranciscoDetailsFragment newInstance(String param1, String param2) {
+        SanFranciscoDetailsFragment fragment = new SanFranciscoDetailsFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -76,7 +76,7 @@ public class WeatherDetailsFragment extends Fragment{
         }
         Bundle bundle = this.getArguments();
         if (bundle != null) {
-            london_details = (London) bundle.getSerializable("MY_BUNDLE");
+            san_francisco_details = (San_Francisco) bundle.getSerializable("MY_BUNDLE");
         }
     }
 
@@ -84,7 +84,7 @@ public class WeatherDetailsFragment extends Fragment{
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_weather_detail, container, false);
+        View view = inflater.inflate(R.layout.fragment_san_francisco_details, container, false);
         manager = getFragmentManager();
 
         tv_current_temperature_field = (TextView) view.findViewById(R.id.tv_current_temperature_field);
@@ -93,11 +93,11 @@ public class WeatherDetailsFragment extends Fragment{
 
         iv_weather_icon = (ImageView) view.findViewById(R.id.iv_weather_icon);
 
-        tv_current_temperature_field.setText(GlobalVariables.london_datalist.getTemp()+"°C");
-        tv_weather_field.setText(GlobalVariables.london_datalist.getMain());
-        tv_details_field.setText(GlobalVariables.london_datalist.getDescription());
+        tv_current_temperature_field.setText(GlobalVariables.san_francisco_datalist.getTemp()+"°C");
+        tv_weather_field.setText(GlobalVariables.san_francisco_datalist.getMain());
+        tv_details_field.setText(GlobalVariables.san_francisco_datalist.getDescription());
 
-        iv_weather_icon.setImageBitmap(GlobalVariables.london_datalist.getIcons());
+        iv_weather_icon.setImageBitmap(GlobalVariables.san_francisco_datalist.getIcons());
 
 
         return view;
@@ -121,36 +121,34 @@ public class WeatherDetailsFragment extends Fragment{
             InputStream is = null;
             try {
                 //GET DETAILS FOR LONDON WEATHER
-                JSONObject london = new ApiMethods(getContext()).GetLondonWeather();
+                JSONObject sanfrancisco = new ApiMethods(getContext()).GetPragueWeather();
 
-                JSONObject data = new JSONObject(london.getString("Data").replaceAll("null","\"\""));
+                JSONObject data = new JSONObject(sanfrancisco.getString("Data").replaceAll("null","\"\""));
 
                 JSONArray weather = data.getJSONArray("weather");
                 JSONObject JSONWeather = weather.getJSONObject(0);
-                GlobalVariables.london_datalist =  new London();
-                GlobalVariables.london_datalist.setId(String.valueOf(JSONWeather.get("id")));
-                GlobalVariables.london_datalist.setMain(String.valueOf(JSONWeather.get("main")));
-                GlobalVariables.london_datalist.setDescription(String.valueOf(JSONWeather.get("description")));
-                GlobalVariables.london_datalist.setIcon(String.valueOf(JSONWeather.get("icon")));
+                GlobalVariables.san_francisco_datalist = new San_Francisco();
+                GlobalVariables.san_francisco_datalist.setId(String.valueOf(JSONWeather.get("id")));
+                GlobalVariables.san_francisco_datalist.setMain(String.valueOf(JSONWeather.get("main")));
+                GlobalVariables.san_francisco_datalist.setDescription(String.valueOf(JSONWeather.get("description")));
+                GlobalVariables.san_francisco_datalist.setIcon(String.valueOf(JSONWeather.get("icon")));
 
                 JSONObject main = new JSONObject(data.getString("main"));
-                GlobalVariables.london_datalist.setTemp(String.valueOf(main.get("temp")));
+                GlobalVariables.san_francisco_datalist.setTemp(String.valueOf(main.get("temp")));
 
                 JSONObject wind = new JSONObject(data.getString("wind"));
-                GlobalVariables.london_datalist.setSpeed(String.valueOf(wind.get("speed")));
+                GlobalVariables.san_francisco_datalist.setSpeed(String.valueOf(wind.get("speed")));
 
-
-
-                String urlOfLondonicon = "http://openweathermap.org/img/w/"+GlobalVariables.london_datalist.getIcon()+".png";
+                String urlOfPragueicon = "http://openweathermap.org/img/w/"+GlobalVariables.san_francisco_datalist.getIcon()+".png";
                 try {
-                    is = new URL(urlOfLondonicon).openStream();
+                    is = new URL(urlOfPragueicon).openStream();
 
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
 
-                london_icon = BitmapFactory.decodeStream(is);
-                GlobalVariables.london_datalist.setIcons(london_icon);
+                san_francisco_icon = BitmapFactory.decodeStream(is);
+                GlobalVariables.prague_datalist.setIcons(san_francisco_icon);
 
 
             } catch (JSONException e) {
@@ -163,11 +161,11 @@ public class WeatherDetailsFragment extends Fragment{
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
-            tv_current_temperature_field.setText(GlobalVariables.london_datalist.getTemp()+"°C");
-            tv_weather_field.setText(GlobalVariables.london_datalist.getMain());
-            tv_details_field.setText(GlobalVariables.london_datalist.getDescription());
+            tv_current_temperature_field.setText(GlobalVariables.san_francisco_datalist.getTemp()+"°C");
+            tv_weather_field.setText(GlobalVariables.san_francisco_datalist.getMain());
+            tv_details_field.setText(GlobalVariables.san_francisco_datalist.getDescription());
 
-            iv_weather_icon.setImageBitmap(GlobalVariables.london_datalist.getIcons());
+            iv_weather_icon.setImageBitmap(GlobalVariables.san_francisco_datalist.getIcons());
 
             progressDialog.dismiss();
         }
