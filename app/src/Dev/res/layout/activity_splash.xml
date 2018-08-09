@@ -9,8 +9,8 @@
 
     <ImageView
         android:id="@+id/imgLogo"
-        android:layout_width="800px"
-        android:layout_height="800px"
+        android:layout_width="600px"
+        android:layout_height="600px"
         android:layout_centerInParent="true"
         android:src="@drawable/weather_icons_grey"/>
 

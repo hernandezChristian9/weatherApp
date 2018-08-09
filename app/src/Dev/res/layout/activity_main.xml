@@ -1,18 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.christian_hernandez.medilink.weatherapplication.MainActivity_Production">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="2dp"
+        android:layout_marginBottom="1dp"
+        android:layout_alignParentTop="true">
 
-</android.support.design.widget.CoordinatorLayout>
+        <fragment
+            android:id="@+id/Main"
+            android:name="com.christian_hernandez.medilink.weatherapplication.Fragment.MainFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout="@layout/fragment_main" />
+        <fragment
+            android:id="@+id/Details"
+            android:name="com.christian_hernandez.medilink.weatherapplication.Fragment.WeatherDetailsFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout="@layout/fragment_main" />
+
+
+    </FrameLayout>
+
+</RelativeLayout>

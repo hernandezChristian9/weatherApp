@@ -2,6 +2,7 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     tools:context="Fragment.MainFragment">
 
     <LinearLayout
@@ -17,73 +18,83 @@
             android:layout_weight="1"
             android:orientation="vertical">
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:padding="5dp"
-                >
+                android:layout_marginTop="15sp"
+                android:layout_marginLeft="15sp"
+                android:padding="5dp">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="25sp"
-                    android:textStyle="bold"
+                    android:text="LONDON"
                     android:textColor="#0c81ed"
-                    android:text="LONDON"/>
-            </LinearLayout>
+                    android:textSize="25sp"
+                    android:textStyle="bold"/>
+            </RelativeLayout>
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_gravity="center">
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="20sp"
+                android:orientation="vertical">
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:padding="5dp"
-                    >
+                    android:layout_marginLeft="20sp"
+                    android:padding="3dp">
 
                     <ImageView
                         android:id="@+id/iv_london_weather"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/temperature"/>
+                        android:layout_width="50sp"
+                        android:layout_height="50sp"
+                        android:src="@drawable/tempicon" />
 
                     <TextView
                         android:id="@+id/tv_london_weather"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginLeft="50dp"
+                        android:layout_marginTop="10dp"
+                        android:text="Sunny"
+                        android:textStyle="italic"
                         android:textColor="#000000"
-                        android:textSize="20sp"
-                        android:text="Sunny"/>
-                </LinearLayout>
+                        android:textSize="20sp" />
+                </RelativeLayout>
 
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:padding="5dp">
+                    android:layout_marginLeft="140sp"
+                    android:padding="3dp">
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/temperature"/>
+                        android:layout_width="50sp"
+                        android:layout_height="50sp"
+                        android:src="@drawable/tempicon" />
 
                     <TextView
                         android:id="@+id/tv_london_temp"
                         android:layout_width="wrap_content"
-                        android:layout_gravity="center"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="50dp"
+                        android:layout_marginTop="10dp"
+                        android:text="38%"
                         android:textColor="#000000"
-                        android:textSize="20sp"
-                        android:text="38%"/>
+                        android:textSize="20sp" />
 
-                </LinearLayout>
+                </RelativeLayout>
 
-            </LinearLayout>
+            </RelativeLayout>
 
 
         </LinearLayout>
@@ -95,10 +106,12 @@
             android:layout_weight="1"
             android:orientation="vertical">
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
+                android:layout_marginTop="15sp"
+                android:layout_marginLeft="15sp"
                 android:padding="5dp"
                 >
                 <TextView
@@ -108,47 +121,53 @@
                     android:textStyle="bold"
                     android:textColor="#0c81ed"
                     android:text="PRAGUE"/>
-            </LinearLayout>
+            </RelativeLayout>
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_gravity="center">
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="20sp">
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:padding="5dp"
+                    android:layout_marginLeft="20sp"
+                    android:padding="3dp"
                     >
                     <ImageView
                         android:id="@+id/iv_prague_weather"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/temperature"/>
+                        android:layout_width="50sp"
+                        android:layout_height="50sp"
+                        android:src="@drawable/tempicon"/>
 
                     <TextView
                         android:id="@+id/tv_prague_weather"
                         android:layout_width="wrap_content"
                         android:layout_gravity="center"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="50dp"
+                        android:layout_marginTop="10dp"
+                        android:textStyle="italic"
                         android:textColor="#000000"
                         android:textSize="20sp"
                         android:text="Sunny"/>
-                </LinearLayout>
+                </RelativeLayout>
 
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:padding="5dp">
+                    android:layout_marginLeft="140sp"
+                    android:padding="3dp">
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/temperature"/>
+                        android:layout_width="50sp"
+                        android:layout_height="50sp"
+                        android:src="@drawable/tempicon"/>
 
                     <TextView
                         android:id="@+id/tv_prague_temp"
@@ -156,12 +175,14 @@
                         android:layout_gravity="center"
                         android:layout_height="wrap_content"
                         android:textColor="#000000"
+                        android:layout_marginLeft="50dp"
+                        android:layout_marginTop="10dp"
                         android:textSize="20sp"
                         android:text="38%"/>
 
-                </LinearLayout>
+                </RelativeLayout>
 
-            </LinearLayout>
+            </RelativeLayout>
 
 
         </LinearLayout>
@@ -173,10 +194,12 @@
             android:layout_weight="1"
             android:orientation="vertical">
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
+                android:layout_marginTop="15sp"
+                android:layout_marginLeft="15sp"
                 android:padding="5dp"
                 >
                 <TextView
@@ -186,59 +209,67 @@
                     android:textStyle="bold"
                     android:textColor="#0c81ed"
                     android:text="SAN FRANCISCO"/>
-            </LinearLayout>
+            </RelativeLayout>
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_gravity="center">
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="20sp"
+                android:orientation="horizontal">
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:padding="5dp"
+                    android:layout_marginLeft="20sp"
+                    android:padding="3dp"
                     >
                     <ImageView
                         android:id="@+id/iv_sf_weather"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/temperature"/>
+                        android:layout_width="50sp"
+                        android:layout_height="50sp"
+                        android:src="@drawable/tempicon"/>
                     <TextView
                         android:id="@+id/tv_sf_weather"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
+                        android:layout_marginLeft="50dp"
+                        android:layout_marginTop="10dp"
+                        android:textStyle="italic"
                         android:textColor="#000000"
                         android:textSize="20sp"
                         android:text="Sunny"/>
-                </LinearLayout>
+                </RelativeLayout>
 
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:padding="5dp">
+                    android:layout_marginLeft="140sp"
+                    android:padding="3dp">
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/temperature"/>
+                        android:layout_width="50sp"
+                        android:layout_height="50sp"
+                        android:src="@drawable/tempicon"/>
 
                     <TextView
                         android:id="@+id/tv_sf_temp"
                         android:layout_width="wrap_content"
                         android:layout_gravity="center"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="50dp"
+                        android:layout_marginTop="10dp"
                         android:textColor="#000000"
                         android:textSize="20sp"
                         android:text="38%"/>
 
-                </LinearLayout>
+                </RelativeLayout>
 
-            </LinearLayout>
+            </RelativeLayout>
 
 
         </LinearLayout>

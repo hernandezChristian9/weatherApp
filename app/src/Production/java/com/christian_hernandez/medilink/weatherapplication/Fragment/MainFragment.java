@@ -45,8 +45,6 @@ public class MainFragment extends Fragment {
     private Prague prague_model;
     private San_Francisco sa_model;
 
-
-    // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
@@ -56,15 +54,6 @@ public class MainFragment extends Fragment {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment MainFragment.
-     */
-    // TODO: Rename and change types and number of parameters
     public static MainFragment newInstance(String param1, String param2) {
         MainFragment fragment = new MainFragment();
         Bundle args = new Bundle();
@@ -89,7 +78,6 @@ public class MainFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_main, container, false);
         LL_1 = (LinearLayout)view.findViewById(R.id.LL_1);
         LL_2 = (LinearLayout)view.findViewById(R.id.LL_2);
@@ -111,7 +99,6 @@ public class MainFragment extends Fragment {
         return view;
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
             mListener.onFragmentInteraction(uri);
@@ -137,18 +124,7 @@ public class MainFragment extends Fragment {
         mListener = null;
     }
 
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
     public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
     private class GetDetails extends AsyncTask<String, Void, String> {
@@ -168,7 +144,6 @@ public class MainFragment extends Fragment {
         protected String doInBackground(String... strings) {
             JSONObject london = new ApiMethods(getContext()).GetLondonWeather();
             try {
-                //GET DETAILS FOR LONDON WEATHER
                 JSONObject data = new JSONObject(london.getString("Data").replaceAll("null","\"\""));
 
                 JSONArray weather = data.getJSONArray("weather");
@@ -186,7 +161,6 @@ public class MainFragment extends Fragment {
                 london_data.setSpeed(String.valueOf(wind.get("speed")));
 
 
-                //GET DETAILS FOR PRAGUE WEATHER
                 JSONObject porgue = new ApiMethods(getContext()).GetPragueWeather();
 
                 JSONObject porgue_data = new JSONObject(porgue.getString("Data").replaceAll("null","\"\""));
@@ -206,7 +180,6 @@ public class MainFragment extends Fragment {
                 prague_model.setSpeed(String.valueOf(porgue_wind.get("speed")));
 
 
-                //GET DETAILS FOR SF WEATHER
                 JSONObject sa = new ApiMethods(getContext()).GetSanFranciscoWeather();
 
                 JSONObject sa_data = new JSONObject(sa.getString("Data").replaceAll("null","\"\""));
@@ -247,8 +220,5 @@ public class MainFragment extends Fragment {
 
             progressDialog.dismiss();
         }
-
-
-
     }
 }

@@ -6,10 +6,10 @@ import android.os.Bundle;
 import android.os.Handler;
 
 /**
- * Created by christian_hernandez on 8/3/2018.
+ * Created by christian_hernandez on 8/9/2018.
  */
 
-public class SplashActivity extends Activity {
+public class SplashActivity_Development extends Activity {
     protected int _splashTime = 3000;
 
     private Thread splashThread;
@@ -21,15 +21,11 @@ public class SplashActivity extends Activity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent i = new Intent(SplashActivity.this, MainActivity.class);
+                Intent i = new Intent(SplashActivity_Development.this, MainActivity_Development.class);
                 startActivity(i);
 
                 finish();
             }
         }, _splashTime);
-
-        //setContentView(R.layout.activity_main);
-        //startActivity(new Intent(SplashActivity.this, MainActivity.class));
-        //finish();
     }
 }

@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.os.Handler;
 
 /**
- * Created by christian_hernandez on 8/3/2018.
+ * Created by christian_hernandez on 8/9/2018.
  */
 
 public class SplashActivity_Development extends Activity {
@@ -27,9 +27,5 @@ public class SplashActivity_Development extends Activity {
                 finish();
             }
         }, _splashTime);
-
-        //setContentView(R.layout.activity_main);
-        //startActivity(new Intent(SplashActivity.this, MainActivity.class));
-        //finish();
     }
 }
