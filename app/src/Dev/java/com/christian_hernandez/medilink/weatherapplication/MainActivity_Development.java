@@ -7,9 +7,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
-//import com.christian_hernandez.medilink.weatherapplication.Dev.R;
+import com.christian_hernandez.medilink.weatherapplication.R;
 
-public class MainActivity_Development extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

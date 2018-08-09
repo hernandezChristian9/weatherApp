@@ -9,7 +9,7 @@ import android.os.Handler;
  * Created by christian_hernandez on 8/3/2018.
  */
 
-public class SplashActivity_Development extends Activity {
+public class SplashActivity extends Activity {
     protected int _splashTime = 3000;
 
     private Thread splashThread;
@@ -21,7 +21,7 @@ public class SplashActivity_Development extends Activity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent i = new Intent(SplashActivity_Development.this, MainActivity_Development.class);
+                Intent i = new Intent(SplashActivity.this, MainActivity.class);
                 startActivity(i);
 
                 finish();
